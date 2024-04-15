@@ -10,12 +10,10 @@ export interface Book {
 }
 
 export interface BookstoreState {
-  value: number;
   bookstoreData: Book[];
 }
 
 const initialState: BookstoreState = {
-  value: 0,
   bookstoreData: [],
 };
 
@@ -23,17 +21,11 @@ export const bookStoreSlice = createSlice({
   name: "bookstore",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
-    removeBook: () => {
-      console.log("Remove book");
+    removeBook: (state, action: PayloadAction<number | string>) => {
+      const bookstoreId = action.payload;
+      state.bookstoreData = state.bookstoreData.filter(
+        (book) => book.id !== bookstoreId,
+      );
     },
     addBook: () => {
       console.log("Add book");
@@ -47,17 +39,9 @@ export const bookStoreSlice = createSlice({
   },
 });
 
-export const {
-  increment,
-  decrement,
-  incrementByAmount,
-  removeBook,
-  addBook,
-  editBook,
-  setBookStoreData,
-} = bookStoreSlice.actions;
+export const { removeBook, addBook, editBook, setBookStoreData } =
+  bookStoreSlice.actions;
 
-export const selectCount = (state: RootState) => state.bookstore.value;
 export const selectBookstore = (state: RootState) =>
   state.bookstore.bookstoreData;
 export default bookStoreSlice.reducer;
