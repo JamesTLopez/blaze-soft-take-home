@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { BookForm } from "~/components/Modals/CreateBookModal";
 import type { RootState } from "~/lib/store";
 
 export interface Book {
@@ -27,8 +28,12 @@ export const bookStoreSlice = createSlice({
         (book) => book.id !== bookstoreId,
       );
     },
-    addBook: () => {
-      console.log("Add book");
+    addBook: (state, action: PayloadAction<BookForm>) => {
+      const bookstoreId = Math.floor(Math.random() * 100); // Usually the backend would return an id, but for this test, random number
+      state.bookstoreData = [
+        { id: bookstoreId, ...action.payload },
+        ...state.bookstoreData,
+      ];
     },
     editBook: () => {
       console.log("Edit book");

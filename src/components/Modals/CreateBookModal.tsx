@@ -1,9 +1,12 @@
 import { useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { addBook } from "~/lib/bookstore/bookstoreSlice";
+import { useAppDispatch } from "~/lib/hooks";
+
 interface Props {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export interface Book {
+export interface BookForm {
   name: string;
   description: string;
   price: number | string;
@@ -11,20 +14,19 @@ export interface Book {
 }
 
 const CreateBookModal = ({ setModal }: Props) => {
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<Book>();
-  const onSubmit: SubmitHandler<Book> = (data) => console.log(data);
-
-  const wrapperRef = useRef(null);
+  } = useForm<BookForm>();
+  const onSubmit: SubmitHandler<BookForm> = (data) => {
+    dispatch(addBook(data));
+    setModal(false);
+  };
 
   return (
-    <div
-      ref={wrapperRef}
-      className="bg-s-black-modal absolute bottom-0 left-0 right-0 top-0 flex h-full w-full items-center justify-center"
-    >
+    <div className="bg-s-black-modal absolute bottom-0 left-0 right-0 top-0 flex h-full w-full items-center justify-center">
       <div>
         <form
           className="bg-s-white flex flex-col gap-2 p-5"
