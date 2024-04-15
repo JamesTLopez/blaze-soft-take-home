@@ -1,4 +1,4 @@
-import { AiFillCodepenCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 interface Props {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
