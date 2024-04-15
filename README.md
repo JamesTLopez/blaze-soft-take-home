@@ -1,5 +1,11 @@
 # BLAZESOFT TAKEHOME TEST SUBMISSION
 
+## Technical overview
+- redux/reduxtoolkit
+- nextjs 14 with app router
+- react-hook-forms
+- tailwindcss
+  
 ## How to run locally
 
 1. Ensure npm is installed on computer
