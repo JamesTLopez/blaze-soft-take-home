@@ -11,6 +11,7 @@ Wish I could have implemented:
 
 - Error handling for empty form values
 - Error handling for improper text input like currency
+- Proper Typescript types folder with deffinitions 
 - notifications for successful or failed crud operations
 - A more elegant modal solution, perhaps another redux implementation for modals
     - currently a useState solution, would revisit that if time allowed
