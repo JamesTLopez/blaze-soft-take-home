@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "~/lib/bookstore/bookstoreslice";
+import bookstoreReducer from "~/lib/bookstore/bookstoreSlice";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      counter: counterReducer,
+      bookstore: bookstoreReducer,
     },
   });
 };
