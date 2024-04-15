@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import type { RootState } from "~/lib/store";
-import { bookstoreData } from "~/mock/bookstoreData";
 
 export interface Book {
   id: number | string;
@@ -17,7 +16,7 @@ export interface BookstoreState {
 
 const initialState: BookstoreState = {
   value: 0,
-  bookstoreData: bookstoreData,
+  bookstoreData: [],
 };
 
 export const bookStoreSlice = createSlice({
@@ -42,6 +41,9 @@ export const bookStoreSlice = createSlice({
     editBook: () => {
       console.log("Edit book");
     },
+    setBookStoreData: (state, action: PayloadAction<Book[] | []>) => {
+      state.bookstoreData = action.payload;
+    },
   },
 });
 
@@ -52,6 +54,7 @@ export const {
   removeBook,
   addBook,
   editBook,
+  setBookStoreData,
 } = bookStoreSlice.actions;
 
 export const selectCount = (state: RootState) => state.bookstore.value;

@@ -2,7 +2,7 @@
 
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { useAppDispatch } from "~/lib/hooks";
-import { increment } from "~/lib/bookstore/bookstoreslice";
+import { increment } from "~/lib/bookstore/bookstoreSlice";
 
 const AddBookButton = () => {
   const dispatch = useAppDispatch();

@@ -1,4 +1,4 @@
-import { Book } from "~/lib/bookstore/bookstoreslice";
+import { Book } from "~/lib/bookstore/bookstoreSlice";
 
 export const bookstoreData: Book[] = [
   {
