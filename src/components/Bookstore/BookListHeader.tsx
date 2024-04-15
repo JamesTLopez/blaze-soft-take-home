@@ -1,8 +1,10 @@
 "use client";
-import { AiFillCodepenCircle } from "react-icons/ai";
-import AddBookButton from "~/components/Bookstore/AddBookButton";
+import { AiFillCodepenCircle, AiOutlinePlusCircle } from "react-icons/ai";
+interface Props {
+  setModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-const BookStoreListHeader = () => {
+const BookStoreListHeader = ({ setModal }: Props) => {
   return (
     <div className="flex w-full items-center px-5 pt-5">
       <div>
@@ -15,7 +17,17 @@ const BookStoreListHeader = () => {
         <h1 className="text-lg font-semibold">Blazesoft Bookstore</h1>
       </div>
       <div>
-        <AddBookButton />
+        <button
+          type="button"
+          onClick={() => setModal(true)}
+          className="flex items-center justify-center gap-2"
+        >
+          <AiOutlinePlusCircle
+            size={35}
+            className="text-s-light-orange opacity-50"
+          />
+          <p>Add Book</p>
+        </button>
       </div>
     </div>
   );
