@@ -19,7 +19,7 @@ const BookListItem = (book: Book) => {
         </h2>
         <h2 className="flex-1 truncate">{book.category}</h2>
         <h2 className="flex flex-1 justify-end">{book.price}</h2>
-        <div>
+        <div className="min-w-10">
           <button
             className="text-s-white z-40 rounded bg-red-300 p-1 hover:bg-red-400"
             onClick={() => dispatch(removeBook(book.id))}

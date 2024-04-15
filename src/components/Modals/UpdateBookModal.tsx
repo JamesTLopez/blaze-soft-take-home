@@ -34,7 +34,6 @@ const UpdateBookModal = ({
   } = useForm<BookForm>();
 
   const onSubmit: SubmitHandler<BookForm> = (data) => {
-    console.log(data);
     dispatch(editBook({ id, ...data }));
     setModal(false);
   };
