@@ -5,6 +5,20 @@
 - nextjs 14 with app router
 - react-hook-forms
 - tailwindcss
+
+## ENHANCEMENTS NOTES
+Wish I could have implemented:
+
+- Error handling for empty form values
+- Error handling for improper text input like currency
+- notifications for successful or failed crud operations
+- A more elegant modal solution, perhaps another redux implementation for modals
+    - currently a useState solution, would revisit that if time allowed
+- UI/UX improvements
+- Using grid to layout the table instead of flexbox
+- in the modal, click outside the close button or form to also close the modal
+- A better visual update for CRUD operations to indicate change
+- a more responsive design for smaller screens and phones
   
 ## How to run locally
 
@@ -13,14 +27,4 @@
 3. Open a terminal instance in repository and run npm install
 
 
-## NOTES
-Wish I could have implemented:
 
-- Error handling for empty form values
-- notifications for successfull or failed crud operations
-- A more elegant modal solution, perhapse another redux implementation for modals
-- UI/UX improvements
-- Using grid to layout the table instead of flexbox
-- in the modal, click outside the close button or form to also close the modal
-- A better visual update for CRUD operations to indicate change
-- a more responsive design for smaller screens and phones
