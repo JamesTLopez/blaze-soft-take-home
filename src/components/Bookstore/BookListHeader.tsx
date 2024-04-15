@@ -1,6 +1,6 @@
 "use client";
-
-import { AiFillCodepenCircle, AiOutlinePlusCircle } from "react-icons/ai";
+import { AiFillCodepenCircle } from "react-icons/ai";
+import AddBookButton from "~/components/Bookstore/AddBookButton";
 
 const BookStoreListHeader = () => {
   return (
@@ -15,13 +15,7 @@ const BookStoreListHeader = () => {
         <h1 className="text-lg font-semibold">Blazesoft Bookstore</h1>
       </div>
       <div>
-        <button className="flex items-center justify-center gap-2">
-          <AiOutlinePlusCircle
-            size={35}
-            className="text-s-light-orange opacity-50"
-          />
-          <p>Add Book</p>
-        </button>
+        <AddBookButton />
       </div>
     </div>
   );

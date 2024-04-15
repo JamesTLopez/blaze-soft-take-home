@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Blazesoft",
+  title: "Blazesoft Bookstore",
   description: "Take home test for blazesoft",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
