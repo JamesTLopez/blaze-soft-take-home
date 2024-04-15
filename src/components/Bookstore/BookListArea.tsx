@@ -24,12 +24,12 @@ function BookAreaList() {
   return (
     <>
       <BookListHeader setModal={setCreateModal} />
-      <div className="flex w-full flex-col p-5">
+      <div className="flex w-full flex-col p-5 ">
         {bookstore.map((book) => (
           <BookListItem key={book.id} {...book} />
         ))}
-        {openCreateModal && <CreateBookModal setModal={setCreateModal} />}
       </div>
+      {openCreateModal && <CreateBookModal setModal={setCreateModal} />}
     </>
   );
 }

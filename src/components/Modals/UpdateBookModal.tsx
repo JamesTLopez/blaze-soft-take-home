@@ -1,9 +1,14 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IoMdCloseCircleOutline } from "react-icons/io";
-import { addBook } from "~/lib/bookstore/bookstoreSlice";
+import { editBook } from "~/lib/bookstore/bookstoreSlice";
 import { useAppDispatch } from "~/lib/hooks";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 interface Props {
+  id: string | number;
+  name: string;
+  description: string;
+  price: number | string;
+  category: string;
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export interface BookForm {
@@ -13,20 +18,29 @@ export interface BookForm {
   category: string;
 }
 
-const CreateBookModal = ({ setModal }: Props) => {
+const UpdateBookModal = ({
+  id,
+  name,
+  description,
+  price,
+  category,
+  setModal,
+}: Props) => {
   const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<BookForm>();
+
   const onSubmit: SubmitHandler<BookForm> = (data) => {
-    dispatch(addBook(data));
+    console.log(data);
+    dispatch(editBook({ id, ...data }));
     setModal(false);
   };
 
   return (
-    <div className="bg-s-black-modal absolute bottom-0 left-0 right-0 top-0 flex h-full w-full items-center justify-center">
+    <div className="bg-s-black-modal absolute bottom-0 left-0 right-0 top-0 z-10 flex h-full w-full items-center justify-center">
       <div>
         <form
           className="bg-s-white flex flex-col gap-2 p-5"
@@ -43,7 +57,7 @@ const CreateBookModal = ({ setModal }: Props) => {
           <label>Book Name</label>
           <input
             className="border-2 border-red-100 p-1"
-            defaultValue=""
+            defaultValue={name}
             {...register("name")}
           />
           {errors.name && (
@@ -52,21 +66,21 @@ const CreateBookModal = ({ setModal }: Props) => {
             </p>
           )}
           <label>Book Description</label>
-          <input defaultValue="" {...register("description")} />
+          <input defaultValue={description} {...register("description")} />
           {errors.description && (
             <p className="text-red-500" role="alert">
               {errors.description.message}
             </p>
           )}
           <label>Book Price</label>
-          <input defaultValue="" {...register("price")} />
+          <input defaultValue={price} {...register("price")} />
           {errors.price && (
             <p className="text-red-500" role="alert">
               {errors.price.message}
             </p>
           )}
           <label>Book Category</label>
-          <input defaultValue="" {...register("category")} />
+          <input defaultValue={category} {...register("category")} />
           {errors.category && (
             <p className="text-red-500" role="alert">
               {errors.category.message}
@@ -76,7 +90,7 @@ const CreateBookModal = ({ setModal }: Props) => {
             type="submit"
             className="text-s-white mt-2 rounded bg-green-400 p-2 hover:bg-green-500"
           >
-            Add Book
+            Update Book
           </button>
         </form>
       </div>
@@ -84,4 +98,4 @@ const CreateBookModal = ({ setModal }: Props) => {
   );
 };
 
-export default CreateBookModal;
+export default UpdateBookModal;

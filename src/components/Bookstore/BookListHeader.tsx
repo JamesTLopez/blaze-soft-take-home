@@ -1,4 +1,3 @@
-"use client";
 import { AiFillCodepenCircle, AiOutlinePlusCircle } from "react-icons/ai";
 interface Props {
   setModal: React.Dispatch<React.SetStateAction<boolean>>;
@@ -7,20 +6,14 @@ interface Props {
 const BookStoreListHeader = ({ setModal }: Props) => {
   return (
     <div className="flex w-full items-center px-5 pt-5">
-      <div>
-        <AiFillCodepenCircle
-          size={35}
-          className="text-s-light-orange opacity-50"
-        />
-      </div>
-      <div className="text-s-light-orange flex flex-1 justify-center">
+      <div className="text-s-light-orange flex flex-1 justify-start">
         <h1 className="text-lg font-semibold">Blazesoft Bookstore</h1>
       </div>
       <div>
         <button
           type="button"
           onClick={() => setModal(true)}
-          className="flex items-center justify-center gap-2"
+          className="flex items-center justify-center gap-2 rounded-md bg-white p-2 hover:bg-green-400"
         >
           <AiOutlinePlusCircle
             size={35}

@@ -35,8 +35,13 @@ export const bookStoreSlice = createSlice({
         ...state.bookstoreData,
       ];
     },
-    editBook: () => {
-      console.log("Edit book");
+    editBook: (state, action: PayloadAction<Book>) => {
+      state.bookstoreData = state.bookstoreData.map((book) => {
+        if (book.id === action.payload.id) {
+          return action.payload;
+        }
+        return book;
+      });
     },
     setBookStoreData: (state, action: PayloadAction<Book[] | []>) => {
       state.bookstoreData = action.payload;
