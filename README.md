@@ -17,4 +17,4 @@ Wish I could have implemented:
 - Using grid to layout the table instead of flexbox
 - in the modal, click outside the close button or form to also close the modal
 - A better visual update for CRUD operations to indicate change
-- a more responsive design for smaller screesn and phones
+- a more responsive design for smaller screens and phones
