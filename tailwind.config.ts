@@ -16,6 +16,7 @@ export default {
         "s-light-orange": "#DDA15E",
         "s-orange": "#BC6C25",
         "s-black": "#1B1A19",
+        "s-black-modal": "rgba(27, 26, 25, 0.5)",
       },
     },
   },

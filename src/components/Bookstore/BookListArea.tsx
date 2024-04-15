@@ -8,6 +8,7 @@ import {
   selectBookstore,
 } from "~/lib/bookstore/bookstoreSlice";
 import { bookstoreData } from "~/mock/bookstoreData";
+import CreateBookModal from "../Modals/CreateBookModal";
 
 function BookAreaList() {
   const dispatch = useAppDispatch();
@@ -23,6 +24,7 @@ function BookAreaList() {
       {bookstore.map((book) => (
         <BookListItem key={book.id} {...book} />
       ))}
+      <CreateBookModal />
     </div>
   );
 }
