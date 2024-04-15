@@ -11,8 +11,10 @@
 Wish I could have implemented:
 
 - Error handling for empty form values
+- notifications for successfull or failed crud operations
 - A more elegant modal solution, perhapse another redux implementation for modals
 - UI/UX improvements
 - Using grid to layout the table instead of flexbox
 - in the modal, click outside the close button or form to also close the modal
 - A better visual update for CRUD operations to indicate change
+- a more responsive design for smaller screesn and phones
